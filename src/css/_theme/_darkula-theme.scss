@@ -1,0 +1,202 @@
+$darkula-1: #000000;
+$darkula-2: #2b2727;
+$darkula-3: #474444;
+$darkula-4: #323232;
+$darkula-5: #ffffff;
+$darkula-6: #a5c25c;
+$darkula-7: #A9B7C6;
+
+$primary-color-hard: $darkula-1;
+$backgroundColour: $darkula-2;
+$primary-color-soft: $darkula-4;
+
+a {
+  color:$darkula-6;
+}
+
+a:hover {
+  color: lighten($darkula-6, 10%);
+
+}
+
+body {
+  background-color: $backgroundColour;
+  color: $darkula-7;
+}
+
+#breadcrumbs {
+  li {
+
+    a {
+      color: $darkula-6;
+    }
+
+    a:hover {
+      color: lighten($darkula-6, 10%);
+
+    }
+  }
+  li:last-child {
+    color: darken($darkula-6, 10%);
+  }
+  .breadcrumbCurrent-title {
+
+    color: darken($darkula-6, 10%);
+  }
+}
+
+////Sidebar
+
+.dev-sidebar {
+  background: $primary-color-hard;
+
+  .dev-sidebar-menu-item {
+    color: $baseWhite;
+
+  }
+
+
+  .dev-sidebar-menu-group {
+    border-left: 4px solid $secondary-color-light;
+
+    &.dev-expanded {
+      background: darken($primary-color-soft, 20%);
+      color: white;
+    }
+
+    .dev-sidebar-sub-menu-item {
+      background: $baseWhite;
+      color: $primary-color-hard;
+
+
+
+      &:hover {
+        background: lighten($primary-color-soft, 20%);
+        color: $baseWhite;
+      }
+    }
+
+  }
+
+
+
+
+
+}
+
+
+
+#pagecontainer article div{
+  background: #00f7f3 ; /* Old browsers */
+  //background: -moz-linear-gradient(top, #e0fffc 0%, #00f7f3 20%, #00deea 100%); /* FF3.6-15 */
+  //background: -webkit-linear-gradient(top, #e0fffc 0%,#00f7f3 20%,#00deea 100%); /* Chrome10-25,Safari5.1-6 */
+  //background: linear-gradient(to bottom, #e0fffc 0%,#00f7f3 20%,#00deea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0fffc', endColorstr='#00deea',GradientType=0 ); /* IE6-9 */
+
+  ul li{
+    color: #24626e;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+
+//#pagecontainer {
+//  position: relative;
+//  .dev-card-base::after {
+//    content: " ";
+//    display: block;
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    bottom: 0;
+//    right: 0;
+//    background: rgba(18, 16, 16, 0.015);
+//    opacity: 0;
+//    z-index: 2;
+//    pointer-events: none;
+//    animation: flicker 0.15s infinite;
+//  }
+//}
+
+
+
+
+.dev-btn{
+  background:$darkula-6;
+
+  &:hover
+  {
+    background:lighten($darkula-6, 10%);
+  }
+}
+
+.dev-card-base{
+  background-color: $darkula-3;
+}
+
+
+

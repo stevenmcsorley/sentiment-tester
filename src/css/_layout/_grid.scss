@@ -1,0 +1,253 @@
+// default:  @include flexbox(1, 'article',true, 8, flex, column);
+
+.#{$prefix}grid-wrapper {
+
+  &__table {
+
+    &--column {
+      &--1 {
+        @include flexbox(1, 'table', true, 8, flex, column);
+      }
+    }
+  }
+
+  &__article {
+
+    &--column {
+
+      &--1 {
+        @include flexbox(1, 'article', true, 8, flex, column);
+      }
+      &--2 {
+        @include flexbox(2, 'article', true, 8, flex, column);
+
+        &--no-response{
+          @include flexbox(2, 'article', false, 8, flex, column);
+        }
+      }
+      &--3 {
+        @include flexbox(3, 'article', true, 8, flex, column);
+      }
+      &--4 {
+        @include flexbox(4, 'article', true, 8, flex, column);
+      }
+      &--5 {
+        @include flexbox(5, 'article', true, 8, flex, column);
+
+        &--no-padding{
+          @include flexbox(5, 'article', true, 0, flex, column);
+        }
+      }
+      &--6 {
+        @include flexbox(6, 'article', true, 8, flex, column);
+      }
+      &--7 {
+        @include flexbox(7, 'article', true, 8, flex, column);
+      }
+      &--8 {
+        @include flexbox(8, 'article', true, 8, flex, column);
+      }
+      &--9 {
+        @include flexbox(9, 'article', true, 8, flex, column);
+      }
+      &--10 {
+        @include flexbox(10, 'article', true, 8, flex, column);
+      }
+      &--14 {
+        @include flexbox(14, 'article', true, 8, flex, column);
+      }
+
+    }
+
+    &--row {
+
+      &--1 {
+        @include flexbox(1, 'article', true, 8, flex, row);
+      }
+      &--2 {
+        @include flexbox(2, 'article', true, 8, flex, row);
+      }
+      &--3 {
+        @include flexbox(3, 'article', true, 8, flex, row);
+      }
+      &--4 {
+        @include flexbox(4, 'article', true, 8, flex, row);
+      }
+      &--5 {
+        @include flexbox(5, 'article', true, 8, flex, row);
+      }
+      &--6 {
+        @include flexbox(6, 'article', true, 8, flex, row);
+      }
+      &--7 {
+        @include flexbox(7, 'article', true, 8, flex, row);
+      }
+      &--8 {
+        @include flexbox(8, 'article', true, 8, flex, row);
+      }
+      &--9 {
+        @include flexbox(9, 'article', true, 8, flex, row);
+      }
+      &--10 {
+        @include flexbox(10, 'article', true, 8, flex, row);
+      }
+
+    }
+  }
+
+  &__div {
+
+    &--column {
+
+      &--1 {
+        @include flexbox(1, 'div', true, 8, flex, column);
+      }
+      &--2 {
+        @include flexbox(2, 'div', true, 8, flex, column);
+
+        &--no-responsive{
+          @include flexbox(2, 'div', false, 8, flex, column);
+        }
+      }
+      &--3 {
+        @include flexbox(3, 'div', true, 8, flex, column);
+      }
+      &--4 {
+        @include flexbox(4, 'div', true, 8, flex, column);
+
+        &--no-responsive{
+          @include flexbox(4, 'div', false, 8, flex, column);
+        }
+
+      }
+      &--5 {
+        @include flexbox(5, 'div', true, 8, flex, column);
+      }
+      &--6 {
+        @include flexbox(6, 'div', true, 8, flex, column);
+      }
+      &--7 {
+        @include flexbox(7, 'div', true, 8, flex, column);
+      }
+      &--8 {
+        @include flexbox(8, 'div', true, 8, flex, column);
+      }
+      &--9 {
+        @include flexbox(9, 'div', true, 8, flex, column);
+      }
+      &--10 {
+        @include flexbox(10, 'div', true, 8, flex, column);
+      }
+      &--11 {
+        @include flexbox(11, 'div', true, 8, flex, column);
+      }
+      &--12 {
+        @include flexbox(12, 'div', true, 8, flex, column);
+      }
+      &--13 {
+        @include flexbox(13, 'div', true, 8, flex, column);
+      }
+      &--14 {
+        @include flexbox(14, 'div', true, 8, flex, column);
+      }
+      &--15 {
+        @include flexbox(15, 'div', true, 8, flex, column);
+      }
+      &--16 {
+        @include flexbox(16, 'div', true, 8, flex, column);
+      }
+      &--17 {
+        @include flexbox(17, 'div', true, 8, flex, column);
+      }
+      &--18 {
+        @include flexbox(18, 'div', true, 8, flex, column);
+      }
+      &--19 {
+        @include flexbox(19, 'div', true, 8, flex, column);
+      }
+      &--20 {
+        @include flexbox(20, 'div', true, 8, flex, column);
+      }
+      &--21 {
+        @include flexbox(21, 'div', true, 8, flex, column);
+      }
+      &--22 {
+        @include flexbox(22, 'div', true, 8, flex, column);
+      }
+      &--23 {
+        @include flexbox(23, 'div', true, 8, flex, column);
+      }
+      &--24 {
+        @include flexbox(24, 'div', true, 8, flex, column);
+      }
+      &--25 {
+        @include flexbox(25, 'div', true, 8, flex, column);
+      }
+      &--26 {
+        @include flexbox(26, 'div', true, 8, flex, column);
+      }
+      &--27 {
+        @include flexbox(27, 'div', true, 8, flex, column);
+      }
+      &--28 {
+        @include flexbox(28, 'div', true, 8, flex, column);
+      }
+
+    }
+
+    &--row {
+
+      &--1 {
+        @include flexbox(1, 'div', true, 8, flex, row);
+      }
+      &--2 {
+        @include flexbox(2, 'div', true, 8, flex, row);
+      }
+      &--3 {
+        @include flexbox(3, 'div', true, 8, flex, row);
+      }
+      &--4 {
+        @include flexbox(4, 'div', true, 8, flex, row);
+      }
+      &--5 {
+        @include flexbox(5, 'div', true, 8, flex, row);
+      }
+      &--6 {
+        @include flexbox(6, 'div', true, 8, flex, row);
+      }
+      &--7 {
+        @include flexbox(7, 'div', true, 8, flex, row);
+      }
+      &--8 {
+        @include flexbox(8, 'div', true, 8, flex, row);
+      }
+      &--9 {
+        @include flexbox(9, 'div', true, 8, flex, row);
+      }
+      &--10 {
+        @include flexbox(10, 'div', true, 8, flex, row);
+      }
+
+    }
+  }
+
+  //// Offsets grid-offset($leftSize, $rightSize, $responsive)
+
+  &--offset{
+
+    &--50-50{
+      @include grid-offset(50%,50%,true);
+    }
+
+    &--70-30{
+      @include grid-offset(70%,30%,true);
+    }
+
+    &--20-80{
+      @include grid-offset(30%,70%,true);
+    }
+
+
+  }
+}
+

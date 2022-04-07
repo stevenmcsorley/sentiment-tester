@@ -1,0 +1,298 @@
+/* Margins */
+
+.dev-debug {
+  border: 1px solid red !important;
+  background: rgba(255, 0, 0, 0.37) !important;
+}
+
+.#{$prefix}u-margin-default {
+  margin: $baseUnit;
+
+  &--x2 {
+    margin: $baseUnit * 2;
+  }
+  
+  &--4px {
+    margin: $baseUnit / 2;
+  }
+}
+
+.#{$prefix}u-margin-small {
+  margin: $baseUnit / 4;
+}
+
+.#{$prefix}u-margin-auto-horizontal {
+  margin: $baseUnit auto $baseUnit;
+
+  &--x2 {
+    margin: $baseUnit * 2 auto $baseUnit * 2;
+  }
+}
+
+.#{$prefix}u-margin-horizontal {
+  margin: 0px $baseUnit 0px;
+
+  &--x2 {
+    margin: 0px $baseUnit * 2 0px;
+  }
+}
+
+.#{$prefix}u-margin-vertical {
+  margin: $baseUnit 0px $baseUnit;
+
+  &--x2 {
+    margin: $baseUnit * 2 0px $baseUnit * 2;
+  }
+}
+
+.#{$prefix}u-margin-top {
+  margin: $baseUnit 0px 0px;
+
+  &--x2 {
+    margin: $baseUnit * 2 0px 0px;
+  }
+}
+
+.#{$prefix}u-margin-left {
+  margin-left: $baseUnit;
+
+  &--auto {
+    margin-left: auto;
+  }
+
+  &--x2 {
+    margin-left: $baseUnit * 2;
+  }
+}
+
+.#{$prefix}u-margin-right {
+  margin-right: $baseUnit;
+
+  &--auto {
+    margin-right: auto;
+  }
+
+  &--x2 {
+    margin-right: $baseUnit * 2;
+  }
+}
+
+.#{$prefix}u-margin-bottom {
+  margin: 0px 0px $baseUnit;
+
+  &--x2 {
+    margin: 0px 0px $baseUnit * 2;
+  }
+}
+
+/* Borders */
+
+.#{$prefix}u-border-default {
+  border: 1px solid $primary-color-hard;
+}
+
+.#{$prefix}u-border-solid-left {
+  @include border('left', 1px, solid, rgba($primary-color-hard, 0.2));
+}
+
+.#{$prefix}u-border-solid-right {
+  @include border('right', 1px, solid, rgba($primary-color-hard, 0.2));
+}
+
+.#{$prefix}u-border-solid-top {
+  @include border('top', 1px, solid, rgba($primary-color-hard, 0.2));
+}
+
+.#{$prefix}u-border-solid-bottom {
+  @include border('bottom', 1px, solid, rgba($primary-color-hard, 0.2));
+}
+
+/* padding */
+
+.#{$prefix}u-padding-default {
+  padding: $baseUnit;
+
+  &--x2 {
+    padding: $baseUnit * 2;
+  }
+
+  &--x4 {
+    padding: $baseUnit * 4;
+  }
+}
+
+.#{$prefix}u-padding-top {
+  padding-top: $baseUnit;
+
+  &--x2 {
+    padding-top: $baseUnit * 2;
+  }
+}
+
+.#{$prefix}u-padding-bottom {
+  padding-bottom: $baseUnit;
+}
+
+.#{$prefix}u-padding-horizontal {
+  padding: 0px $baseUnit 0px;
+
+  &--x2 {
+    padding: 0px $baseUnit * 2 0px;
+  }
+}
+
+.#{$prefix}u-padding-vertical {
+  padding: $baseUnit 0px $baseUnit;
+
+  &--x2 {
+    padding: $baseUnit * 2 0px $baseUnit * 2;
+  }
+
+  &--x4 {
+    padding: $baseUnit * 4 0px $baseUnit * 4;
+  }
+}
+
+.#{$prefix}u-no-spacing {
+  padding: $zero;
+  margin: $zero;
+}
+
+/* text align */
+
+.#{$prefix}u-align-left {
+  text-align: left;
+}
+
+.#{$prefix}u-align-center {
+  text-align: center;
+}
+
+.#{$prefix}u-align-right {
+  text-align: right;
+}
+
+.#{$prefix}dark-text {
+  color: $baseBlack;
+}
+
+.#{$prefix}light-text {
+  color: $baseWhite;
+}
+
+.#{$prefix}u-font-size {
+
+  &--16 {
+    @include fontsize(16);
+  }
+
+  &--24 {
+    @include fontsize(24);
+  }
+
+}
+
+.#{$prefix}u-justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.dev-u-flex-default{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.#{$prefix}u-vertical-center{
+  align-self: center;
+}
+
+/* Viewport Size */
+
+.#{$prefix}-u-viewport-full-height {
+  height: 100vh;
+  min-height: 100%;
+}
+
+.#{$prefix}u-overflow {
+  &--auto {
+    overflow: auto;
+  }
+
+  &--hidden {
+    overflow: hidden;
+  }
+
+}
+
+/* helpers */
+
+@include breakpoint(lg) {
+  .#{$prefix}u-hidden-desktop {
+    display: none;
+  }
+}
+
+@include breakpoint(md) {
+  .#{$prefix}u-hidden-desktop {
+    display: block;
+  }
+}
+
+/* flex utilis */
+
+.dev-flex {
+  display: flex;
+}
+
+.dev-flex-end {
+  justify-content: flex-end;
+}
+
+.dev-flex-between {
+  justify-content: space-between;
+}
+
+.dev-flex-middle{
+  align-items: center;
+}
+
+.dev-full-width{
+  width:100%;
+}
+
+.dev-flex-column{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-block{
+  display:block
+}
+
+
+.max-height-300{
+  max-height:300px;
+}
+
+.flex-zero{
+  flex: 0 0 auto!important
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.capitalize{
+  text-transform: uppercase;
+}
+
+
+.inline{
+  display: inline;
+}

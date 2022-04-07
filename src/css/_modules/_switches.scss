@@ -1,0 +1,64 @@
+.dev-checkbox-switch {
+  margin-left: auto;
+
+  .dev-switch-input {
+    display: none;
+  }
+  .dev-switch-label {
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: left;
+    padding: 16px 0 16px 44px
+  }
+  .dev-switch-label:before, .dev-switch-label:after {
+    content: "";
+    position: absolute;
+    margin: 0;
+    outline: 0;
+    top: 50%;
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .dev-switch-label:before {
+    left: 1px;
+    width: 34px;
+    height: 14px;
+    background-color: #9E9E9E;
+    border-radius: 8px;
+  }
+  .dev-switch-label:after {
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+  }
+  .dev-switch-label .dev-toggle--on {
+    display: none;
+  }
+  .dev-switch-label .dev-toggle--off {
+    display: inline-block;
+  }
+  .dev-switch-input:checked + .dev-switch-label:before {
+    background-color: lighten($primary-color-light, 20%);
+  }
+  .dev-switch-input:checked + .dev-switch-label:after {
+    background-color: $primary-color-light;
+    -ms-transform: translate(80%, -50%);
+    -webkit-transform: translate(80%, -50%);
+    transform: translate(80%, -50%);
+  }
+  .dev-switch-input:checked + .dev-switch-label .dev-toggle--on {
+    display: inline-block;
+  }
+  .dev-switch-input:checked + .dev-switch-label .dev-toggle--off {
+    display: none;
+  }
+}

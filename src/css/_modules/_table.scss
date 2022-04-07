@@ -1,0 +1,170 @@
+.dev-simple-table {
+
+  width: 100%;
+  display: table;
+  font-size: 14px;
+
+  &--full-bordered {
+
+    th, thead th
+    {
+      border-top:1px solid $primary-color-light;
+      border-bottom:1px solid $primary-color-light;
+      border-left:1px solid $primary-color-light;
+
+      &:last-child
+      {
+        border-right:1px solid $primary-color-light;
+      }
+    }
+
+
+    tr td{
+      border-left:1px solid $primary-color-light;
+      border-bottom:1px solid $primary-color-light;
+
+      &:last-child
+      {
+        border-right:1px solid $primary-color-light;
+      }
+    }
+
+  }
+
+  &--half-bordered {
+
+    th, thead th {
+      border-bottom:1px solid $primary-color-light!important;
+    }
+
+    tr
+    {
+      font-weight: 200;
+      font-size: 14px;
+      border-bottom:1px solid $primary-color-light!important;
+
+    }
+
+
+  }
+
+
+  th, thead th {
+    padding: $baseUnit;
+    text-align: left;
+  }
+
+  tr {
+
+  }
+
+  td {
+    padding: $baseUnit;
+  }
+}
+
+table.dev-data-table {
+  width:100%;
+
+  thead {
+    th {
+      padding: $baseUnit;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding:$baseUnit;
+
+        p{
+          margin:0;
+          font-size: 14px;
+          line-height: $baseUnit *  2;
+        }
+      }
+    }
+  }
+}
+
+
+.dataTables_wrapper {
+
+  .dataTables_paginate .paginate_button.current {
+    color: #fff !important;
+    border: 1px solid $primary-color-light;
+    background: none $primary-color-light;
+  }
+  .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+    border: 1px solid $primary-color-light;
+    background: none $primary-color-light;
+    background: lighten($primary-color-light, 10%)
+  }
+  .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    border: 1px solid $primary-color-light;
+    background: none $primary-color-light;
+    background: lighten($primary-color-light, 10%)
+  }
+
+  .dataTables_length, .dataTables_filter, .dataTables_info, .paginate_button {
+    font-weight: 200 !important;
+    font-size: 14px;
+  }
+  .dataTables_wrapper .dataTables_filter input {
+    border: none;
+    border: 1px solid #eaeaea;
+    height: 20px;
+    &:focus {
+      outline-color: transparent;
+    }
+  }
+
+
+  table tbody tr {
+    font-weight: 200;
+    font-size: 14px;
+    border-bottom: 1px solid $primary-color-light!important;
+  }
+
+  table th, table thead, .panel-heading, .dev-accordion .dev-accordion-head {
+    border-bottom: 1px solid $primary-color-light !important;
+    color: $primary-color-hard !important;
+    font-weight: 200 !important;
+    font-size: 14px;
+    padding: 0 0 8px;
+    text-align: left !important;
+    //background:none!important;
+    background: transparent !important;
+    h3 {
+      font-weight: 200 !important;
+    }
+  }
+
+  table td, table tbody td {
+    vertical-align: middle;
+    text-align: left !important;
+  }
+
+  table tr, table tr td {
+    transition: all ease-in-out 0.2s;
+  }
+
+  table tr:hover {
+    background: darken($baseWhite, 1%) !important
+  }
+
+  table tr td:hover {
+    background: darken($baseWhite, 3%) !important
+  }
+
+
+}
+
+
+table.dataTable thead th
+{
+  padding: 8px!important;
+}

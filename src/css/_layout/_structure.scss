@@ -1,0 +1,109 @@
+.dev-grid-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @include grid-offset(18%, 82%, false);
+
+  @include breakpoint(xs) {
+    & > :nth-child(1) {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+.wrapper{
+  position: relative;
+  max-width:960px;
+  margin:0 auto;
+}
+
+
+
+
+.#{$prefix}grid-wrapper {
+  &--1 {
+    @include flexbox(1, 'article', true, 8, flex, column);
+
+    &__table {
+      @include flexbox(1, 'div', true, 8, flex, column);
+    }
+
+    &__div {
+      @include flexbox(1, 'div', true, 8, flex, column);
+    }
+  }
+
+  &--2 {
+    @include flexbox(2, 'div', true, 8, flex, row);
+
+    &--column {
+      @include flexbox(2, 'article', true, 8, flex, column);
+
+    }
+    &--default {
+      @include flexbox(2, 'div', true, 8, flex, column);
+
+    }
+
+    &__buttons {
+      @include flexbox(2, 'div', true, 8, block, column);
+    }
+  }
+
+  &--3 {
+    @include flexbox(3, 'div', true, 8, flex, column);
+  }
+
+  &__searchbar {
+
+    &--2 {
+      //@include flexbox(2, 'div',false, 8, flex, row);
+      @include grid-offset(25%, 75%, true);
+    }
+  }
+
+  &--6 {
+    @include flexbox(6, 'article', true, 8, flex, column);
+  }
+}
+
+.btn-offset-6-4 {
+
+  @include grid-offset(50%, 50%, true);
+
+  & > * {
+    //padding:16px;
+
+  }
+}
+
+.#{$prefix}grid-wrapper-offset {
+
+  &--5-5 {
+    @include grid-offset(50%, 50%, true);
+  }
+}
+
+.dev-hide-small {
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+
+.dev-hide-medium {
+@include breakpoint(xs) {
+
+    display: none;
+  }
+}
+
+.c3 svg
+{
+  width:100%;
+}
+
+

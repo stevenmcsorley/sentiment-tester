@@ -1,0 +1,42 @@
+.dev-hide {
+  display: none !important;
+}
+
+.dev-show-mobile
+{
+  @include breakpoint(xs) {
+    display: block;
+  }
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+
+}
+
+.dev-hide-xsmall {
+  @include breakpoint(xs) {
+    display: none;
+  }
+
+}
+
+.dev-hide-small {
+  @include breakpoint(sm) {
+    display: none;
+  }
+
+}
+
+.dev-hide-medium {
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.dev-hide-large {
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+

@@ -1,0 +1,284 @@
+/* Border Mixin */
+
+@mixin border($direction, $width, $style, $color) {
+  border-#{$direction}: $width $style $color;
+}
+
+//@mixin fontsize($font-size){
+//
+//  font-size: #{$font-size}px;
+//}
+
+
+@mixin fontsize($font-size) {
+  font-size: #{$font-size}px;
+  font-size: #{$font-size / 16}rem;
+}
+
+//@mixin breakpoint($size) {
+//  @if $size == phone-only {
+//    @media (max-width: 599px) {
+//      @content;
+//    }
+//  } @else if $size == tablet-portrait-up {
+//    @media (min-width: 600px) and (max-width: 899px) {
+//      @content;
+//    }
+//  } @else if $size == tablet-landscape-up {
+//    @media (min-width: 900px) and (max-width: 1199px) {
+//      @content;
+//    }
+//  } @else if $size == desktop-down {
+//    @media (max-width: 1199px) {
+//      @content;
+//    }
+//  } @else if $size == desktop-up {
+//    @media (min-width: 1200px) {
+//      @content;
+//    }
+//  } @else if $size == big-desktop-up {
+//    @media (min-width: 1800px) {
+//      @content;
+//    }
+//  }
+//}
+
+@mixin linearGradient($direction, $top, $bottom) {
+  background: linear-gradient($direction, $top 0%, $bottom 100%);
+}
+
+@mixin breakpoint($class) {
+
+  $large-break: 1200px;
+  $medium-break: 992px;
+  $small-break: 768px;
+  $x-small-break: 767px;
+
+  $max-width: max-width;
+  $min-width: min-width;
+
+  @if $class == xs {
+    @media ($max-width: $x-small-break) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media ($min-width: $small-break) {
+      @content;
+    }
+  } @else if $class == md {
+    @media ($min-width: $medium-break) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media ($min-width: $large-break) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+
+@mixin custom-breakpoint($break-point, $range:'max') {
+
+  @media (#{$range}-width: #{$break-point}px) {
+    @content;
+  }
+
+}
+
+
+@mixin flexbox($cols, $childElements, $responsive: true, $gap: 8, $flex: flex, $flexDirection: column) {
+  display: flex;
+  flex-wrap: wrap;
+  $widthDiv: 100%;
+  margin-left: -#{$gap}px;
+  margin-right: -#{$gap}px;
+
+
+
+  & > #{$childElements} {
+
+    transition: 0.5s ease-in-out all;
+
+    & > * {
+      margin: #{$gap}px;
+    }
+  }
+
+  @if ($flex == 'flex') {
+    & > #{$childElements} {
+      display: flex;
+      flex-direction: #{$flexDirection};
+
+      & > * {
+        flex: 1 1 auto;
+      }
+    }
+  }
+  @else
+  {
+    & > #{$childElements} {
+      display: #{$flex};
+      flex-direction: #{$flexDirection};
+
+      & > * {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  // if divided by 2
+
+  @if ($cols == 1) {
+    & > #{$childElements} {
+      width: #{$widthDiv};
+    }
+  } @else if ($cols == 2) {
+
+    @if ($responsive == true) {
+      & > #{$childElements} {
+        width: $widthDiv / 2;
+
+        @include breakpoint(xs) {
+          width: #{$widthDiv};
+        }
+
+        @include breakpoint(sm) {
+          width: #{$widthDiv};
+        }
+
+        @include breakpoint(lg) {
+          width: $widthDiv / 2;
+
+        }
+      }
+    } @else if ($responsive == false) {
+      & > #{$childElements} {
+        width: $widthDiv / 2;
+      }
+    }
+
+  } @else {
+
+    @if ($cols % 2 == 0) {
+
+      @if ($responsive == true) {
+        & > #{$childElements} {
+          width: $widthDiv / $cols;
+
+          @include breakpoint(xs) {
+            width: 100%;
+          }
+          @include breakpoint(sm) {
+            width: $widthDiv / 2;
+          }
+          @include breakpoint(md) {
+            width: $widthDiv / 3;
+          }
+          @include breakpoint(lg) {
+            width: $widthDiv / $cols;
+          }
+        }
+      } @else if ($responsive == false) {
+        & > #{$childElements} {
+          width: $widthDiv / $cols;
+        }
+      }
+    } @else {
+      @if ($responsive == true) {
+        & > #{$childElements} {
+          width: $widthDiv / $cols;
+
+          @include breakpoint(xs) {
+            width: #{$widthDiv};
+          }
+          @include breakpoint(sm) {
+            width: #{$widthDiv};
+          }
+          @include breakpoint(md) {
+            width: $widthDiv / 3;
+          }
+          @include breakpoint(lg) {
+            width: $widthDiv / $cols;
+          }
+        }
+      } @else if ($responsive == false) {
+        & > #{$childElements} {
+          width: $widthDiv / $cols;
+        }
+      }
+    }
+  }
+}
+
+@mixin grid-offset($leftSize, $rightSize, $responsive) {
+  display: flex;
+  //align-items: flex-start;
+  max-width: 100%;
+  position: relative;
+  @include breakpoint(xs) {
+    flex-wrap: wrap;
+  }
+
+  @if ($responsive == true) {
+    & > :nth-child(1) {
+      width: #{$leftSize};
+      flex: 1 1 #{$leftSize};
+      @include breakpoint(xs) {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+
+    }
+
+    & > :nth-child(2) {
+      vertical-align: top;
+      width: #{$rightSize};
+      flex: 1 1 #{$rightSize};
+      @include breakpoint(xs) {
+        flex: 1 1 100%;
+        width: 100%;
+
+      }
+    }
+  } @else if ($responsive == false) {
+    & > :nth-child(1) {
+      width: #{$leftSize};
+      flex: 1 1  #{$leftSize};
+    }
+
+    & > :nth-child(2) {
+      vertical-align: top;
+      width: #{$rightSize};
+      flex: 1 1 #{$rightSize};
+    }
+  }
+
+  @else if ($responsive == custom) {
+    & > * {
+      //width: $widthDiv / 2;
+    }
+  }
+
+}
+
+//@function multiply-percent($value1, $value2) {
+//  @return $value1 * $value2;
+//}
+
+@mixin tabShare($tabs) {
+
+  $increment: 100% / #{$tabs};
+
+  & > .tabbar-1 {
+    left: 0;
+  }
+
+  @for $i from 2 through $tabs {
+    & > .tabbar-#{$i} {
+      left: calc(#{$increment} * #{$i} - #{$increment});
+    }
+  }
+
+}

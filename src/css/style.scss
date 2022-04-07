@@ -1,0 +1,26 @@
+@import "./_third-party/manifest";
+
+@import "./_partials/manifest";
+
+/* Variables and mixins */
+@import "./_utility/manifest";
+
+/* our helper classes and enhancements*/
+@import './_base//manifest';
+
+/* Reset and Base styles */
+@import "./_layout/manifest";
+
+/* everything that is structure which holds all our modules together */
+@import "./_modules/manifest";
+
+/* all our modules */
+@import "./_states/manifest";
+
+/* changing style on an action or default note before changing state */
+@import "./_theme/manifest"; /* themes */
+
+
+.home{
+    border:1px solid red;
+}

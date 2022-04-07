@@ -1,0 +1,305 @@
+@mixin dev-input-field-style {
+  border: 1px solid $primary-color-light;
+  outline: none;
+  height: 30px;
+  padding: $baseUnit $baseUnit + 2;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 2px;
+
+  &::placeholder {
+    color: lighten($primary-color-light, 10%);
+  }
+}
+
+$formWidth: 300px;
+
+.dev-form {
+
+  &--centre-#{$formWidth}
+  {
+    margin: auto;
+  }
+
+  fieldset {
+    //border-bottom: 1px solid rgba($primary-color-light, 0.2);
+    padding: $baseUnit $baseUnit * 2 $baseUnit * 3;
+
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  .dev-label {
+    display: block;
+    font-size: $baseUnit +4;
+    color: $primary-color-light;
+    margin: $baseUnit * 2 0px $baseUnit / 2;
+
+  }
+
+  .dev-form-control-spaced {
+    margin: $baseUnit * 4 0 0;
+  }
+
+  input {
+    @include dev-input-field-style;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: transparent;
+
+    &[type=text], &[type=number], &[type=password], &[type=email], &[type=search], &[type=tel], &[type=url] {
+      @include dev-input-field-style;
+      padding: $baseUnit;
+    }
+
+
+  }
+
+  input.has-validation.invalid {
+    border: 1px solid #ff0000 !important;
+  }
+
+  textarea {
+    @include dev-input-field-style;
+    width: 100%;
+    padding: 1%;
+    box-sizing: border-box;
+  }
+
+  select {
+    width: 100%;
+    padding: $baseUnit+1px $baseUnit*3 $baseUnit+1px $baseUnit;
+
+    appearance: none;
+    border: 1px solid $primary-color-light;
+    outline: none;
+    border-radius: 2px;
+    background: transparent;
+    color: $primary-color-hard;
+    z-index: 1;
+
+    option {
+      color: $primary-color-hard;
+    }
+
+  }
+
+  .dev-select {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      z-index: 0;
+      margin-top: -3px;
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #3E6B8E transparent;
+      right: 10px;
+      transition: 0.3s ease-in-out all;
+
+      :hover::after {
+        transform: rotate(180deg);
+        transform-origin: center center;
+      }
+
+    }
+
+  }
+
+
+  .dev-button-group {
+    display: flex;
+    flex-direction: row;
+    font-size: $baseUnit * 2;
+    line-height: $baseUnit * 2 - 2;
+
+    > * {
+      margin-right: $baseUnit;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .dev-checkbox-group {
+
+    .dev-checkbox-container {
+      display: block;
+      position: relative;
+      padding-left: $baseUnit * 4;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: $baseUnit * 2 - 2;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      &--inline
+      {
+        display: inline-block;
+        padding-left: 24px;
+        margin-right:16px;
+      }
+    }
+
+    /* Hide the browser's default checkbox */
+    .dev-checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom checkbox */
+    .dev-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $baseUnit * 2;
+      width: $baseUnit * 2;
+      background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .dev-checkbox-container:hover input ~ .dev-checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .dev-checkbox-container input:checked ~ .dev-checkmark {
+      background-color: $primary-color-hard;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .dev-checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .dev-checkbox-container input:checked ~ .dev-checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .dev-checkbox-container .dev-checkmark:after {
+      left: 6px;
+      top: 1px;
+      width: 3px;
+      height: 9px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+  }
+
+}
+
+select:focus, input:focus, button:focus {
+  outline-color: transparent !important;
+  outline-width: 0px !important;
+  box-shadow: none !important;
+}
+
+.dev-input--inline {
+  display: inline-block;
+  width: 50%!important;
+  vertical-align:middle;
+  border-radius:0;
+}
+
+label{
+  font-size: $baseUnit * 2 - 2;
+  color: $primary-color-light;
+}
+
+.dev-label {
+  display: block;
+  font-size: $baseUnit +4;
+  color: $primary-color-light;
+  //margin: $baseUnit * 2 0px $baseUnit / 2;
+
+}
+
+select, input {
+  height: 32px;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid lighten($primary-color-light, 20%) !important;
+  box-shadow: none !important;
+  color: $primary-color-light;
+  background: $baseWhite;
+  &:focus {
+    box-shadow: none ;
+    background: $baseWhite;
+  }
+
+  &[type=radio]
+  {
+    height:auto;
+  }
+}
+
+
+.input {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: $primary-color-light;
+  background-color: $baseWhite;
+  border: 0 solid $primary-color-light;
+  outline: none;
+  border-color: $primary-color-light;
+  box-shadow: 0 0 1px $primary-color-light;
+
+  &.input-clean {
+    outline: none;
+    border-color: $primary-color-light;
+    box-shadow: 0 0 1px $primary-color-light;
+    background-color: $baseWhite;
+  }
+
+  &.input:focus {
+    outline: 3px auto $primary-color-soft;
+    background: $baseWhite;
+  }
+
+  &.input-search {
+    box-shadow: 0 0 1px #999;
+    font-weight: normal;
+    font-size: 14px;
+    height: 31px;
+    width: 250px;
+    margin-left: 0;
+    padding-left: 10px;
+    z-index: 99999999;
+
+  }
+
+  &.input-wide {
+    width: 100%;
+    background-color: $baseWhite;
+  }
+
+  &.input-error {
+    border: 1px solid #d9534f;
+    outline: none !important;
+  }
+}
+
