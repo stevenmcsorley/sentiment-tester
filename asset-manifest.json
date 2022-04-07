@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sentiment-tester/static/css/main.cdf4b1d2.css",
+    "main.js": "/sentiment-tester/static/js/main.e0a127b4.js",
+    "static/js/787.96872d2b.chunk.js": "/sentiment-tester/static/js/787.96872d2b.chunk.js",
+    "index.html": "/sentiment-tester/index.html",
+    "main.cdf4b1d2.css.map": "/sentiment-tester/static/css/main.cdf4b1d2.css.map",
+    "main.e0a127b4.js.map": "/sentiment-tester/static/js/main.e0a127b4.js.map",
+    "787.96872d2b.chunk.js.map": "/sentiment-tester/static/js/787.96872d2b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdf4b1d2.css",
+    "static/js/main.e0a127b4.js"
+  ]
+}
