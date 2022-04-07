@@ -1,3 +1,10 @@
+
+React project testing Stocks Sentiment api
+
+
+Deployed [here](https://stevenmcsorley.github.io/sentiment-tester/) 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
